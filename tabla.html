@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Shobe se la come</title>
+        <link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+</head>
+
+<body>
+
+        <h4>Seleccione Entidad</h4>
+        <select id="seleccionado">
+                <option value="marca">Marca</option>
+                <option value="modelo">Modelo</option>
+                <option value="estado">Estado</option>
+                <option value="unidad">Unidad</option>
+                <option value="prioridad">Prioridad</option>
+                <option value="paso">Paso</option>
+                <option value="estado">Estado</option>
+                <option value="procedimiento">Procedimiento</option>
+                <option value="tiporesponsable">Tipo Responsable</option>
+        </select>
+        
+        <vaadin-grid theme="column-borders" column-reordering-allowed>
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template class="header">#ID</template>
+                        <template>[[item.idMarca]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template class="header">Nombre</template>
+                        <template>[[item.nombre]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template class="header">Descripcion</template>
+                        <template>[[item.descripcion]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template class="header">Activo</template>
+                        <template>[[item.activo]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template>
+                          <vaadin-checkbox aria-label="Seleccionar Fila" checked="{{selected}}">Seleccionar</vaadin-checkbox>
+                        </template>
+                </vaadin-grid-column>
+        </vaadin-grid>
+       
+
+        <script type="module" src="./tabla.js"></script>
+</body>
+
+</html>
