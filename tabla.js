@@ -1,19 +1,8 @@
 import AbstractResourceClient from "./boundaries/AbstractResourceClient.js";
 
-var dato;
-var dato2;
-var seleccion;
-var selector = document.querySelector("#seleccionado");
-selector.addEventListener('change',
-    function () {
-        var up = this.options[selector.selectedIndex];
-        dato = up.value;
-        seleccion = dato.substr(0, 1);
-        dato2 = seleccion.toUpperCase() + dato.substring(1);
-        console.log(dato2);
+        
         let arc = new AbstractResourceClient();
-        arc._url += dato;
-        console.log(arc._url);
+        arc._url += "agregar entidad a probar";
         customElements.whenDefined("vaadin-grid").then(_ => {
             const tabla = document.querySelector("vaadin-grid");
             tabla.dataProvider = (params, callback) => {
@@ -23,5 +12,5 @@ selector.addEventListener('change',
                 }).then(data => { callback(data, 5) })
             };
         })
-    })
+        
 

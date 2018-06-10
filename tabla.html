@@ -4,22 +4,21 @@
 <head>
         <title>Shobe se la come</title>
         <link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+        <link rel="import" href="bower_components/vaadin-form-layout/vaadin-form-layout.html">
 </head>
 
 <body>
 
+                <vaadin-form-layout>
+                                <paper-input label="First Name" value="Jane"></paper-input>
+                                <paper-input label="Last Name" value="Doe"></paper-input>
+                                <paper-input label="Email" value="jane.doe@example.com"></paper-input>
+                                <br>
+                                <paper-input label="Confirm Email" value="jane.doe@example.com"></paper-input>
+                                <paper-input colspan="2" label="Address"></paper-input>
+                </vaadin-form-layout>
+
         <h4>Seleccione Entidad</h4>
-        <select id="seleccionado">
-                <option value="marca">Marca</option>
-                <option value="modelo">Modelo</option>
-                <option value="estado">Estado</option>
-                <option value="unidad">Unidad</option>
-                <option value="prioridad">Prioridad</option>
-                <option value="paso">Paso</option>
-                <option value="estado">Estado</option>
-                <option value="procedimiento">Procedimiento</option>
-                <option value="tiporesponsable">Tipo Responsable</option>
-        </select>
         
         <vaadin-grid theme="column-borders" column-reordering-allowed>
                 <vaadin-grid-column width="20%" flex-grow="0" resizable>
