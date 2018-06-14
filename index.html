@@ -1,37 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./mocha/mocha.css">
-    </head>
-    <body>
+
+<head>
+        <link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+        <title>Administracion</title>
+</head>
+<body>
+<script type="module" src="./custom-topnav.js"></script>
+<script type="module" src="./tabla.js"></script>
+<script type="module" src="./seguimiento.js"></script>
+<custom-topnav tabTres="Inicio" tabUno="Mantenimientos Activos" tabDos="Mantenimientos Terminados"></custom-topnav>
+<br>
+<div id="tres" style="text-align:left">
+    <h1>Formulario para Administrador</h1>
+</div>
+<div id="uno" style="text-align:left">
+        <h1>Mantenimientos Activos</h1>
+        <br>
+        <div class="contenedor">
+                <vaadin-grid id="tabla" theme="no-border" column-reordering-allowed>
+                        <vaadin-grid-column width="10%" flex-grow="0" resizable>
+                                <template class="header">#IdOrden</template>
+                                <template>[[item.idOrden]]</template>
+                        </vaadin-grid-column>
         
-        <div id="seleccion">
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Fecha</template>
+                                <template>[[item.fecha]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Equipo</template>
+                                <template>[[item.idSolicitud.descripcionEquipo]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                                <template class="header">Solictante</template>
+                                <template>[[item.idSolicitud.solicitante]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="19%" flex-grow="0" resizable>
+                                <template class="header">Falla</template>
+                                <template>[[item.idSolicitud.descripcionFalla]]</template>
+                        </vaadin-grid-column>
+                    </vaadin-grid><br>
 
-            <h4>Seleccione Entidad a Probar</h4>
-            <script>
-                var d = document.getElementById("seleccion");
-                d.style.position = "relative";
-                d.style.left="200px";
-                d.style.top ="25px";
-            </script>
-            <select id="seleccionado">
-                    <option value="marca">Marca</option>
-                    <option value="modelo">Modelo</option>
-                    <option value="estado">Estado</option>
-                    <option value="unidad">Unidad</option>
-                    <option value="prioridad">Prioridad</option>
-                    <option value="paso">Paso</option>
-                    <option value="estado">Estado</option>
-                    <option value="procedimiento">Procedimiento</option>
-                    <option value="tiporesponsable">Tipo Responsable</option>
-            </select>
         </div>
+</div>
+<div id="dos" style="text-align:left">
 
-        <div id="mocha">
-                <script  src="./mocha/mocha.js"></script>
-                <script type="module" src="./chai/chai.js"></script>
-                <script type="module" src="./boundaries/AbstractResourceClient.js"></script>
-                <script type="module" src="./test/AbstractResourceTest.js"></script>
+        <h1>Mantenimientos Terminados</h1>
+        <div class="contenedor">
+                <vaadin-grid id="tabla2" theme="no-border" column-reordering-allowed>
+                        <vaadin-grid-column width="10%" flex-grow="0" resizable>
+                                <template class="header">#IdOrden</template>
+                                <template>[[item.idOrden]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Fecha</template>
+                                <template>[[item.fecha]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Equipo</template>
+                                <template>[[item.idSolicitud.descripcionEquipo]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                                <template class="header">Solictante</template>
+                                <template>[[item.idSolicitud.solicitante]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="19%" flex-grow="0" resizable>
+                                <template class="header">Falla</template>
+                                <template>[[item.idSolicitud.descripcionFalla]]</template>
+                        </vaadin-grid-column>
+                    </vaadin-grid><br>
         </div>
-    </body>
+</div>
+</body>
 </html>

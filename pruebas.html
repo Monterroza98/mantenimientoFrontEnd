@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./mocha/mocha.css">
+    </head>
+    <body>
+        
+        <div id="seleccion">
+
+            <h4>Seleccione Entidad a Probar</h4>
+            <script>
+                var d = document.getElementById("seleccion");
+                d.style.position = "relative";
+                d.style.left="200px";
+                d.style.top ="25px";
+            </script>
+            <select id="seleccionado">
+                    <option value="marca">Marca</option>
+                    <option value="modelo">Modelo</option>
+                    <option value="estado">Estado</option>
+                    <option value="unidad">Unidad</option>
+                    <option value="prioridad">Prioridad</option>
+                    <option value="paso">Paso</option>
+                    <option value="estado">Estado</option>
+                    <option value="procedimiento">Procedimiento</option>
+                    <option value="tiporesponsable">Tipo Responsable</option>
+            </select>
+        </div>
+
+        <div id="mocha">
+                <script  src="./mocha/mocha.js"></script>
+                <script type="module" src="./chai/chai.js"></script>
+                <script type="module" src="./boundaries/AbstractResourceClient.js"></script>
+                <script type="module" src="./test/AbstractResourceTest.js"></script>
+        </div>
+    </body>
+</html>
