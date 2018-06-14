@@ -19,34 +19,42 @@
                 </vaadin-form-layout>
 
         <h4>Seleccione Entidad</h4>
+        <div class="contenedor">
+                <vaadin-grid theme="column-borders" column-reordering-allowed>
+                        <vaadin-grid-column width="10%" flex-grow="0" resizable>
+                                <template class="header">#IdOrden</template>
+                                <template>[[item.idOrden]]</template>
+                        </vaadin-grid-column>
         
-        <vaadin-grid theme="column-borders" column-reordering-allowed>
-                <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                        <template class="header">#ID</template>
-                        <template>[[item.idMarca]]</template>
-                </vaadin-grid-column>
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Fecha</template>
+                                <template>[[item.fecha]]</template>
+                        </vaadin-grid-column>
 
-                <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                        <template class="header">Nombre</template>
-                        <template>[[item.nombre]]</template>
-                </vaadin-grid-column>
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Equipo</template>
+                                <template>[[item.idSolicitud.descripcionEquipo]]</template>
+                        </vaadin-grid-column>
 
-                <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                        <template class="header">Descripcion</template>
-                        <template>[[item.descripcion]]</template>
-                </vaadin-grid-column>
+                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                                <template class="header">Solictante</template>
+                                <template>[[item.idSolicitud.solicitante]]</template>
+                        </vaadin-grid-column>
 
-                <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                        <template class="header">Activo</template>
-                        <template>[[item.activo]]</template>
-                </vaadin-grid-column>
-
-                <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                        <template>
-                          <vaadin-checkbox aria-label="Seleccionar Fila" checked="{{selected}}">Seleccionar</vaadin-checkbox>
-                        </template>
-                </vaadin-grid-column>
-        </vaadin-grid>
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template class="header">Falla</template>
+                                <template>[[item.idSolicitud.descripcionFalla]]</template>
+                        </vaadin-grid-column>
+        
+                        <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                                <template>
+                                  <vaadin-checkbox aria-label="Seleccionar Fila" checked="{{selected}}">Seleccionar</vaadin-checkbox>
+                                </template>
+                        </vaadin-grid-column>
+                </vaadin-grid>
+        </div>
+        
+         
        
 
         <script type="module" src="./tabla.js"></script>

@@ -12,7 +12,7 @@ class CustomTopnav extends HTMLElement {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     float: left;
 }
@@ -33,6 +33,10 @@ class CustomTopnav extends HTMLElement {
     get tabDos(){
       return this.getAttribute("tabDos");
     }
+
+    get tabTres(){
+        return this.getAttribute("tabTres");
+      }
   
     connectedCallback(){
       let div = document.createElement("div");
@@ -43,6 +47,7 @@ class CustomTopnav extends HTMLElement {
       boton1.onclick = function() {
           document.querySelector("#uno").style.display = 'block';
           document.querySelector("#dos").style.display = 'none';
+          document.querySelector("#tres").style.display = 'none';
       }
       div.appendChild(boton1);
       let boton2 = document.createElement("button");
@@ -50,9 +55,19 @@ class CustomTopnav extends HTMLElement {
       boton2.setAttribute("class", "button")
       boton2.onclick = function() {
           document.querySelector("#dos").style.display = 'block';
+          document.querySelector("#tres").style.display = 'none';
           document.querySelector("#uno").style.display = 'none';
       }
       div.appendChild(boton2);
+      let boton3 = document.createElement("button");
+      boton3.appendChild(document.createTextNode(this.tabTres));
+      boton3.setAttribute("class", "button")
+      boton3.onclick = function() {
+          document.querySelector("#dos").style.display = 'none';
+          document.querySelector("#uno").style.display = 'none';
+          document.querySelector("#tres").style.display = 'block';
+      }
+      div.appendChild(boton3);
       this.root.appendChild(div);
     }
   

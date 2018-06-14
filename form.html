@@ -11,54 +11,90 @@
 
 <body>
 <script type="module" src="./custom-topnav.js"></script>
-<custom-topnav tabUno="Ingresar Solicitud" tabDos="Historial de Mantenimientos"></custom-topnav>
+<script type="module" src="./seguimiento.js"></script>
+<script type="module" src="./cmb.js"></script>
+<script type="module" src="./tabla.js"></script>
+<custom-topnav tabUno="Ingresar Solicitud" tabDos="Seguimiento" tabTres="Historial"></custom-topnav>
 <br>
 <div id="uno" style="text-align:center">
 <h2>Bienvenido al formulario de ingreso para solicitudes</h2>
 <br>
 <div class="contenedor">
-<vaadin-text-field error-message="Ingrese un valor" required label="ID Solicitud" placeholder="Ingrese ID"></vaadin-text-field><br>
-<vaadin-text-field error-message="Ingrese un valor" required label="Solicitante" placeholder="Ingrese Nombre"></vaadin-text-field><br>
-<vaadin-text-area label="Descripcion" placeholder="Ingrese Descripcion"></vaadin-text-area><br>
-<vaadin-text-field label="Fecha" value="18-06-2018" readonly></vaadin-text-field><br>
-<vaadin-button>Ingresar Solicitud</vaadin-button>
+<vaadin-text-field id="txtSolicitante" error-message="Ingrese un valor" required label="Solicitante" placeholder="Ingrese Nombre"></vaadin-text-field><br>
+<vaadin-text-field id="txtCorrelativo" error-message="Ingrese un valor" required label="Correlativo" placeholder="Ingrese Correlativo"></vaadin-text-field><br>
+<vaadin-text-field id="txtEquipo" error-message="Ingrese un valor" required label="Equipo" placeholder="Descripcion Equipo"></vaadin-text-field><br>
+<vaadin-text-field id="txtFalla" error-message="Ingrese un valor" required label="Falla" placeholder="Descripcion Falla"></vaadin-text-field><br>
+<vaadin-text-area id="txtObservaciones" label="Observaciones" placeholder="Ingrese Observaciones"></vaadin-text-area><br>
+<vaadin-text-field label="Fecha" id="fecha" readonly></vaadin-text-field><br>
+<h3>Seleccione Unidad</h3>
+<select id="cmbUnidad">
+</select><br><br>
+<input type="button" id="btnIngresar" value="Ingresar Solicitud"></input>
 </div>
 </div>
+<div id="dos" style="text-align:center">
 
-<div id="dos">
-                <h4>Historial</h4>
-                <br>
-                <div class="contenedor">
-                <vaadin-grid theme="column-borders" column-reordering-allowed>
-                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                                <template class="header">#ID</template>
-                                <template>[[item.idMarca]]</template>
-                        </vaadin-grid-column>
-        
-                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                                <template class="header">Nombre</template>
-                                <template>[[item.nombre]]</template>
-                        </vaadin-grid-column>
-        
-                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                                <template class="header">Descripcion</template>
-                                <template>[[item.descripcion]]</template>
-                        </vaadin-grid-column>
-        
-                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                                <template class="header">Activo</template>
-                                <template>[[item.activo]]</template>
-                        </vaadin-grid-column>
-        
-                        <vaadin-grid-column width="20%" flex-grow="0" resizable>
-                                <template>
-                                  <vaadin-checkbox aria-label="Seleccionar Fila" checked="{{selected}}">Seleccionar</vaadin-checkbox>
-                                </template>
-                        </vaadin-grid-column>
-                </vaadin-grid>
+        <h2>Buscar solicitud para ver el estado</h2>
+        <div class="contenedor">
+          <custom-buscador label="Ingrese un ticket de seguimiento: " tipo="solicitud"></custom-buscador>
+          <hr>
+          <div id="buscador">
+  
+          </div>
         </div>
-</div>
+      </div>
 
+      <div id="tres" style="text-align:center">
+
+        <h2>Historial Mantenimientos previos terminados</h2>
+        <div class="contenedor">
+            <vaadin-grid theme="no-border" column-reordering-allowed>
+                <vaadin-grid-column width="10%" flex-grow="0" resizable>
+                        <template class="header">#IdOrden</template>
+                        <template>[[item.idOrden]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                        <template class="header">Fecha</template>
+                        <template>[[item.fecha]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                        <template class="header">Equipo</template>
+                        <template>[[item.idSolicitud.descripcionEquipo]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="20%" flex-grow="0" resizable>
+                        <template class="header">Solictante</template>
+                        <template>[[item.idSolicitud.solicitante]]</template>
+                </vaadin-grid-column>
+
+                <vaadin-grid-column width="15%" flex-grow="0" resizable>
+                        <template class="header">Falla</template>
+                        <template>[[item.idSolicitud.descripcionFalla]]</template>
+                </vaadin-grid-column>
+                </vaadin-grid>
+
+        </div>
+      </div>
+<div id="ticket">
+<h1 >Tu numero de ticket es </h1>
+<h2 id="numSeg">12</h2>
+<input type="button" value="Aceptar">
+</div>
+<style>
+#ticket{
+        width: 40%;
+        height: 200px;
+        position: absolute;
+        top: 200px;
+        left: 35%;
+        background-color:#D8D8D8;
+        color:  black;
+        display: none;
+}
+</style>
+<script type="module" src="./custom-buscador.js"></script>
 
 
 </body>

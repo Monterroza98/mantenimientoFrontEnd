@@ -1,6 +1,6 @@
 class AbstractResourceClient {
   constructor() {
-    this._url="http://localhost:8080/MantenimientoWebData-1.0-SNAPSHOT/webresources/";
+    this._url="http://localhost:8082/MantenimientoWebApp-1.0-SNAPSHOT/ws/";
   }
   
   get url(){
