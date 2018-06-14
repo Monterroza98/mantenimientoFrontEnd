@@ -3,31 +3,19 @@
 
 <head>
         <link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+        <title>Administracion</title>
 </head>
 <body>
 <script type="module" src="./custom-topnav.js"></script>
 <script type="module" src="./tabla.js"></script>
 <script type="module" src="./seguimiento.js"></script>
-<script type="module" src="./custom-editor.js"></script>
+<custom-topnav tabTres="Inicio" tabUno="Mantenimientos Activos" tabDos="Mantenimientos Terminados"></custom-topnav>
 <br>
-<custom-topnav  tabTres="Editar Estado" tabUno="Mantenimientos Activos" tabDos="Mantenimientos Terminados"></custom-topnav>
-<br>
-<div id="tres" style="text-align:center">
-                <br>
-                <br>
-    <h3>Ingrese ID de la orden a editar</h3>
-    <div class="contenedor">
-        <custom-editor label="Ingrese ID de Orden a modificar estado: " tipo="orden"></custom-editor>
-        <hr>
-        <div id="buscador">
-
-        </div>
-      </div>
+<div id="tres" style="text-align:left">
+    <h1>Formulario para Administrador</h1>
 </div>
-<div id="uno" style="text-align:center">
-        <br>
-        <br>
-        <h2>Mantenimientos Activos</h2>
+<div id="uno" style="text-align:left">
+        <h1>Mantenimientos Activos</h1>
         <br>
         <div class="contenedor">
                 <vaadin-grid id="tabla" theme="no-border" column-reordering-allowed>
@@ -59,13 +47,9 @@
 
         </div>
 </div>
-<div id="dos" style="text-align:center">
-                <br>
-                <br> 
-                <br>
-                <br>
-                
-        <h2>Mantenimientos Terminados</h2>
+<div id="dos" style="text-align:left">
+
+        <h1>Mantenimientos Terminados</h1>
         <div class="contenedor">
                 <vaadin-grid id="tabla2" theme="no-border" column-reordering-allowed>
                         <vaadin-grid-column width="10%" flex-grow="0" resizable>
