@@ -10,10 +10,12 @@
 </head>
 
 <body>
+
+<script type="module" src="./tabla.js"></script>
 <script type="module" src="./custom-topnav.js"></script>
 <script type="module" src="./seguimiento.js"></script>
+<script type="module" src="./custom-buscador.js"></script>
 <script type="module" src="./cmb.js"></script>
-<script type="module" src="./tabla.js"></script>
 <custom-topnav tabUno="Ingresar Solicitud" tabDos="Seguimiento" tabTres="Historial"></custom-topnav>
 <br>
 <div id="uno" style="text-align:center">
@@ -49,7 +51,7 @@
 
         <h2>Historial Mantenimientos previos terminados</h2>
         <div class="contenedor">
-            <vaadin-grid theme="no-border" column-reordering-allowed>
+            <vaadin-grid id="tabla2" theme="no-border" column-reordering-allowed>
                 <vaadin-grid-column width="10%" flex-grow="0" resizable>
                         <template class="header">#IdOrden</template>
                         <template>[[item.idOrden]]</template>
@@ -95,7 +97,6 @@
         display: none;
 }
 </style>
-<script type="module" src="./custom-buscador.js"></script>
 
 
 </body>
