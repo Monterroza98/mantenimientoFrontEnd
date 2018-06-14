@@ -6,14 +6,17 @@ class CustomTopnav extends HTMLElement {
       this.root.innerHTML = `
       <style>
 .btn-group .button {
-    background-color: #4CAF50; /* Green */
-    border: 1px solid green;
+    background-color: #E31616;
+    border: 2px solid white;
     color: white;
+    font-border:32px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 17px;
+    position: relative;
+    left:25%;
     cursor: pointer;
     float: left;
 }
@@ -21,7 +24,7 @@ class CustomTopnav extends HTMLElement {
     border-right: none; /* Prevent double borders */
 }
 .btn-group .button:hover {
-    background-color: #3e8e41;
+    background-color: #5D0606;
 }
 </style>
           `;
