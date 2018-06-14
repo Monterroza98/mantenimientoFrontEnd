@@ -1,6 +1,5 @@
-import AbstractResourceClient from "./boundaries/AbstractResourceClient.js";
 
-        
+import AbstractResourceClient from "./boundaries/AbstractResourceClient.js";
         let arc = new AbstractResourceClient();
         arc._url +="orden/activa";
         customElements.whenDefined("vaadin-grid").then(_ => {
@@ -36,6 +35,3 @@ import AbstractResourceClient from "./boundaries/AbstractResourceClient.js";
                 }).then(data => { callback(data, data.length )})
             };
         })
-
-        
-
